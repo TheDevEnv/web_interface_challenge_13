@@ -1,0 +1,139 @@
+:root {
+  --grad1: #B884E5;
+  --grad2: #7B81E0;
+  --grad3: #BC7EDA;
+  --grad4: #A97AD2;
+  --bg: #5F5280;
+  --text: #DFDDE6;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--grad1), var(--grad2)) no-repeat;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+.timeline {
+  min-width: 300px;
+  box-shadow: 0px 8px 23px #00000030;
+}
+
+.timeline__header {
+  position: relative;
+  padding: 1.4rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grad1);
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.headline > p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.icon img {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
+.icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 0.7rem;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.line-before::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 62%;
+  width: 0.12rem;
+  background: white;
+  z-index: 1;
+}
+
+.line-after::after {
+  content: '';
+  position: absolute;
+  top: 62%;
+  bottom: 0;
+  width: 0.12rem;
+  background: white;
+  z-index: 1;
+}
+
+.timeline__content {
+  background: var(--bg);
+  padding: 1.4rem 1.6rem;
+  position: relative;
+}
+
+.timeline__content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9.5%;
+  width: 0.15rem;
+  background: var(--text);
+  z-index: 1;
+}
+
+.timeline__content .list {
+  margin: 1.2rem 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.timeline__content .list:hover {
+  color: white;
+}
+
+.timeline__content .list::before {
+  content: '';
+  display: block;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin-right: 1rem;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 6px var(--bg);
+  z-index: 10;
+}
